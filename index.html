@@ -9,16 +9,39 @@
        
     </script>
     <script>
-         //opgave 7 - Se index.js
+         //opgave 7 - Se index.js 
+         // Skift tekst
         function change() {
             document.getElementById("text").innerText = "Den nye tekst er sat.";
         }
 
         //opgave 8 - Se index.js
+        // Uendelig clickcounter (reseter ved reload)
         let clickCount = 0;
         function countClicks() {
             clickCount ++;
             document.getElementById("clickCount").innerText = clickCount;
+        }
+
+        //Opgave 9 
+        // tilføj noget til en liste
+        function addTodo() {
+            const input = document.getElementById("itemInput");
+            const value = input.value.trim();
+                if (value) {
+                const li = document.createElement("li");
+                li.innerText = value;
+                document.getElementById("itemList").appendChild(li);
+                input.value = "";
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById("addItemButton").onclick = addTodo;
+        };
+        // opgavee 10
+        function changeColorButton() {
+            document.body.style.backgroundColor = "lightblue";
         }
     </script>
 </head>
@@ -28,6 +51,13 @@
     <button id="changeTextButton" onclick="change()">Skift tekst</button>
     <p>Antal klik: <span id="clickCount">0</span></p>
     <button id="clickButton" onclick="countClicks()">Klik mig</button>
+
+    <input type="text" id="itemInput" placeholder="Skriv noget...">
+    <button id="addItemButton">Tilføj</button>
+
+    <ul id="itemList"></ul>
+
+    <button id="changeColorButton" onclick="changeColorButton()">Skift baggrundsfarve</button>
 
 </body>
 </html>
