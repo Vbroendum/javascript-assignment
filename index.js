@@ -55,3 +55,13 @@ console.log("Den omvendte tekst er: " + reverseString("Javascript."));
 console.log("------------------")
 
 
+//opgave 6
+console.log("Opgave 6")
+function flattenArray(arr) {
+    return arr.flat();
+}
+
+console.log("Det flade array er: " + flattenArray([[1, 2], [3, 4], [5]]));
+console.log("---------------");
+
+

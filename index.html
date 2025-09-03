@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Opgaver</title>
+        <script src="index.js">
+
+       
+    </script>
+    <script>
+         //opgave 7 - Se index.js
+        function change() {
+            document.getElementById("text").innerText = "Den nye tekst er sat.";
+        }
+
+        //opgave 8 - Se index.js
+        let clickCount = 0;
+        function countClicks() {
+            clickCount ++;
+            document.getElementById("clickCount").innerText = clickCount;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Opgaver</h1>
+    <p id="text">Dette er den oprindelige tekst.</p>
+    <button id="changeTextButton" onclick="change()">Skift tekst</button>
+    <p>Antal klik: <span id="clickCount">0</span></p>
+    <button id="clickButton" onclick="countClicks()">Klik mig</button>
+
+</body>
+</html>
