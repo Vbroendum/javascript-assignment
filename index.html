@@ -43,6 +43,27 @@
         function changeColorButton() {
             document.body.style.backgroundColor = "lightblue";
         }
+
+        //Opgave 11 
+        function formValidation() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            let errorMessage = "";
+
+            if (!name) {
+                errorMessage += "Navn er påkrævet.<br>";
+            }
+            if (!email) {
+                errorMessage += "Email er påkrævet.<br>";
+            }
+            else if (!email.includes("@")) {
+                errorMessage += "Email er ikke gyldig.<br>";
+            }
+
+            document.getElementById("errorMessage").innerHTML = errorMessage;
+            return !errorMessage;
+        }
+
     </script>
 </head>
 <body>
@@ -59,5 +80,16 @@
 
     <button id="changeColorButton" onclick="changeColorButton()">Skift baggrundsfarve</button>
 
+    <form id="myForm" onsubmit="return formValidation()">
+        <label for="name">Navn:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <br>
+        <button type="submit">Submit</button>
+        </form>
+
+        <p id="errorMessage" style="color: red;"></p>
 </body>
 </html>

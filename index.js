@@ -65,3 +65,39 @@ console.log("Det flade array er: " + flattenArray([[1, 2], [3, 4], [5]]));
 console.log("---------------");
 
 
+//Opgave 12 
+console.log("Opgave 12")
+const posts = [];
+
+const getPosts = () => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(data => {
+            posts.push(...data);
+            console.log("Posts hentet:", posts);
+        })
+        .catch(error => console.error("Fejl ved hentning af posts:", error));
+};
+
+getPosts();
+
+console.log("---------------");
+
+// Opgave 13
+console.log("Opgave 13")
+const users = [];
+
+
+const getUsers = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    users.push(...data);
+    console.log("Users hentet:", users);
+  } catch (error) {
+    console.error("Fejl ved hentning af users:", error);
+  }
+};
+
+getUsers();
+console.log("---------------");
